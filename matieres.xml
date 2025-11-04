@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Matieres xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="ecole.xsd">
+
+  <Matiere Code="MAT-001">
+    <Nom>physique-chimie</Nom>
+    <Coefficient>4</Coefficient>
+    <Professeur>M. Diallo</Professeur>
+  </Matiere>
+
+  <Matiere Code="MAT-002">
+    <Nom>Anglais</Nom>
+    <Coefficient>2</Coefficient>
+    <Professeur>Mme Fall</Professeur>
+  </Matiere>
+</Matieres>

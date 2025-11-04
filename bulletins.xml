@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bulletins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="ecole.xsd">
+
+  <Bulletin>
+    <MatriculeEleve>ELEVE-0001</MatriculeEleve>
+    <Trimestre>1</Trimestre>
+    <AnneeScolaire>2024-2025</AnneeScolaire>
+    <MoyenneParMatiere>11.5</MoyenneParMatiere>
+    <MoyenneParMatiere>11.5</MoyenneParMatiere>
+    <MoyenneGenerale>11.5</MoyenneGenerale>
+    <Rang>6</Rang>
+    <AppreciationGenerale>Élève sérieuse et appliquée</AppreciationGenerale>
+    <Decision>Admis</Decision>
+  </Bulletin>
+
+</Bulletins>

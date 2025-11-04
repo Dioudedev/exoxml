@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="MatriculeEleveType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="ELEVE-[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodeMatiereType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="MAT-[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ClasseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="6ème"/>
+      <xs:enumeration value="5ème"/>
+      <xs:enumeration value="4ème"/>
+      <xs:enumeration value="3ème"/>
+      <xs:enumeration value="2nde"/>
+      <xs:enumeration value="1ère"/>
+      <xs:enumeration value="Terminale"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SexeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="M"/>
+      <xs:enumeration value="F"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NoteType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TypeEvaluationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Devoir"/>
+      <xs:enumeration value="Interrogation"/>
+      <xs:enumeration value="Examen"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="EleveType">
+    <xs:sequence>
+      <xs:element name="Nom" type="xs:string"/>
+      <xs:element name="Prenom" type="xs:string"/>
+      <xs:element name="DateNaissance" type="xs:date"/>
+      <xs:element name="Classe" type="ClasseType"/>
+      <xs:element name="Sexe" type="SexeType"/>
+    </xs:sequence>
+    <xs:attribute name="Matricule" type="MatriculeEleveType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="MatiereType">
+    <xs:sequence>
+      <xs:element name="Nom" type="xs:string"/>
+      <xs:element name="Coefficient" type="xs:positiveInteger"/>
+      <xs:element name="Professeur" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="Code" type="CodeMatiereType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="NoteTypeComplex">
+    <xs:sequence>
+      <xs:element name="MatriculeEleve" type="MatriculeEleveType"/>
+      <xs:element name="CodeMatiere" type="CodeMatiereType"/>
+      <xs:element name="Trimestre" type="xs:positiveInteger"/>
+      <xs:element name="Note" type="NoteType"/>
+      <xs:element name="Type" type="TypeEvaluationType"/>
+      <xs:element name="Date" type="xs:date"/>
+      <xs:element name="Appreciation" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BulletinType">
+    <xs:sequence>
+      <xs:element name="MatriculeEleve" type="MatriculeEleveType"/>
+      <xs:element name="Trimestre" type="xs:positiveInteger"/>
+      <xs:element name="AnneeScolaire" type="xs:string"/>
+      <xs:element name="MoyenneParMatiere" type="xs:decimal" maxOccurs="unbounded"/>
+      <xs:element name="MoyenneGenerale" type="xs:decimal"/>
+      <xs:element name="Rang" type="xs:positiveInteger"/>
+      <xs:element name="AppreciationGenerale" type="xs:string"/>
+      <xs:element name="Decision" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Eleves">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Eleve" type="EleveType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Matieres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Matiere" type="MatiereType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Notes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Note" type="NoteTypeComplex" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Bulletins">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Bulletin" type="BulletinType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

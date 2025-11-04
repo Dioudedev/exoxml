@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Eleves xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="ecole.xsd">
+
+  <Eleve Matricule="ELEVE-0001">
+    <Nom>Diallo</Nom>
+    <Prenom>Hawa</Prenom>
+    <DateNaissance>2003-04-03</DateNaissance>
+    <Classe>Terminale</Classe>
+    <Sexe>F</Sexe>
+  </Eleve>
+
+  <Eleve Matricule="ELEVE-0002">
+    <Nom>Ba</Nom>
+    <Prenom>Mamoudou</Prenom>
+    <DateNaissance>2006-02-06</DateNaissance>
+    <Classe>1ère</Classe>
+    <Sexe>M</Sexe>
+  </Eleve>
+</Eleves>

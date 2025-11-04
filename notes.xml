@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Notes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="ecole.xsd">
+
+  <Note>
+    <MatriculeEleve>ELEVE-0001</MatriculeEleve>
+    <CodeMatiere>MAT-001</CodeMatiere>
+    <Trimestre>1</Trimestre>
+    <Note>11.5</Note>
+    <Type>Examen</Type>
+    <Date>2025-11-10</Date>
+    <Appreciation>Passable</Appreciation>
+  </Note>
+</Notes>
